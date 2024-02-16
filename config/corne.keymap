@@ -39,6 +39,30 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        row_to_left {
+            bindings = <&mt RG(LEFT_SHIFT) LEFT_ARROW>;
+            key-positions = <38 18>;
+        };
+
+        row_to_down {
+            bindings = <&mt RG(LEFT_SHIFT) DOWN_ARROW>;
+            key-positions = <38 19>;
+        };
+
+        row_to_up {
+            bindings = <&mt RG(LEFT_SHIFT) RIGHT_ARROW>;
+            key-positions = <38 20>;
+        };
+
+        row_to_right {
+            bindings = <&mt RG(LEFT_SHIFT) RIGHT_ARROW>;
+            key-positions = <38 21>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
