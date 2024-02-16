@@ -9,6 +9,36 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    macros {
+        alfred: alfred {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mt LEFT_COMMAND SPACE>;
+            label = "ALFRED";
+        };
+
+        snippits: snippits {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mt LG(LEFT_ALT) SPACE>;
+            label = "SNIPPITS";
+        };
+
+        screenshot: screenshot {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&mt RG(LSHIFT) X>;
+            label = "SCREENSHOT";
+        };
+
+        raycast: raycast {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(SPACE)>;
+            label = "RAYCAST";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -35,10 +65,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp TAB    &kp N1         &kp N2        &kp N3  &kp N4  &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&trans     &trans         &kp F2        &none   &kp F4  &none     &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&kp LSHFT  &bt BT_DISC 0  &bt BT_SEL 0  &trans  &trans  &trans    &trans    &trans    &trans  &trans     &trans  &trans
-                                        &trans  &trans  &trans    &trans    &trans    &trans
+&trans  &kp N1   &kp N2       &kp N3    &kp N4  &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&trans  &alfred  &snippits    &raycast  &kp F2  &kp F4    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans  &none    &screenshot  &none     &trans  &none     &trans    &trans    &trans  &trans     &trans  &trans
+                              &trans    &trans  &trans    &trans    &trans    &trans
             >;
         };
 
@@ -50,10 +80,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
-&trans  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
-&trans  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
-                          &trans    &trans    &trans       &trans     &trans     &trans
+&trans  &kp EXCL       &kp AT        &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
+&trans  &trans         &trans        &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
+&trans  &bt BT_DISC 0  &bt BT_SEL 0  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
+                                     &trans    &trans    &trans       &trans     &trans     &trans
             >;
         };
     };
