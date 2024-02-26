@@ -74,9 +74,9 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESCAPE      &kp Q  &kp W  &kp E  &kp R      &kp T               &kp Y         &kp U      &kp I      &kp O    &kp P     &kp BSPC
+&kp LCTRL       &kp Q  &kp W  &kp E  &kp R      &kp T               &kp Y         &kp U      &kp I      &kp O    &kp P     &kp BSPC
 &kp TAB         &kp A  &kp S  &kp D  &kp F      &kp G               &kp H         &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
-&sk LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V      &kp B               &kp N         &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp TILDE
+&sk LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V      &kp B               &kp N         &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp GRAVE
                               &mo 2  &kp SPACE  &kp LEFT_COMMAND    &kp LEFT_ALT  &kp ENTER  &mo 1
             >;
         };
@@ -89,10 +89,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp N1   &kp N2       &kp N3    &kp N4  &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&trans  &alfred  &snippits    &raycast  &kp F2  &kp F4    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans  &none    &screenshot  &none     &trans  &none     &trans    &trans    &trans  &trans     &trans  &trans
-                              &trans    &trans  &trans    &trans    &trans    &trans
+&kp ESCAPE  &kp N1   &kp N2       &kp N3    &kp N4  &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&trans      &alfred  &snippits    &raycast  &kp F2  &kp F4    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans      &none    &screenshot  &none     &trans  &none     &trans    &trans    &trans  &trans     &trans  &trans
+                                  &trans    &trans  &trans    &trans    &trans    &trans
             >;
         };
 
@@ -104,7 +104,7 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&trans  &kp EXCL       &kp AT        &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
+&trans  &kp EXCL       &kp AT        &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &kp PIPE
 &trans  &trans         &trans        &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT         &kp RBKT  &kp BSLH  &kp GRAVE
 &trans  &bt BT_DISC 0  &bt BT_SEL 0  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC         &kp RBRC  &kp PIPE  &kp TILDE
                                      &trans    &trans    &trans       &trans     &trans     &trans
