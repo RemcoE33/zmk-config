@@ -13,21 +13,21 @@
         alfred: alfred {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&mt LEFT_COMMAND SPACE>;
+            bindings = <&kp LG(SPACE)>;
             label = "ALFRED";
         };
 
         snippits: snippits {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&mt LG(LEFT_ALT) SPACE>;
+            bindings = <&kp LG(LA(SPACE))>;
             label = "SNIPPITS";
         };
 
         screenshot: screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&mt RG(LSHIFT) X>;
+            bindings = <&kp LA(LS(X))>;
             label = "SCREENSHOT";
         };
 
