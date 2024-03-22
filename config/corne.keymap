@@ -118,12 +118,12 @@
             >;
         };
 
-        excel {
+        excel_window {
             bindings = <
-&trans  &trans  &trans  &trans          &trans            &trans    &trans          &trans          &trans          &trans           &trans  &trans
-&trans  &trans  &trans  &kp LEFT_SHIFT  &kp LEFT_COMMAND  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &trans  &trans
-&trans  &trans  &trans  &trans          &trans            &trans    &trans          &trans          &trans          &trans           &trans  &trans
-                        &trans          &trans            &trans    &trans          &trans          &trans
+&trans  &trans  &trans  &trans            &trans            &trans    &trans          &trans          &trans        &trans           &trans  &trans
+&trans  &trans  &trans  &kp LEFT_SHIFT    &kp LEFT_COMMAND  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
+&trans  &trans  &trans  &kp LC(LEFT_ALT)  &trans            &trans    &trans          &trans          &trans        &trans           &trans  &trans
+                        &trans            &trans            &trans    &trans          &trans          &trans
             >;
         };
     };
