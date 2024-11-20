@@ -27,7 +27,7 @@
         screenshot: screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LS(X))>;
+            bindings = <&kp LA(LS(Z))>;
             label = "SCREENSHOT";
         };
 
@@ -50,6 +50,13 @@
             #binding-cells = <0>;
             bindings = <&kp COLON &kp EQUAL>;
             label = "GOVARIABLE";
+        };
+
+        tmux: tmux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B)>;
+            label = "TMUX";
         };
     };
 
@@ -103,10 +110,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp N1   &kp N2       &kp N3     &kp N4   &kp N5     &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&trans      &alfred  &snippits    &raycast   &kp F2   &kp F4     &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans      &none    &screenshot  &shortcat  &kp F12  &kp F10    &trans    &trans    &trans  &trans     &trans  &trans
-                                  &trans     &trans   &trans     &trans    &trans    &trans
+&kp ESCAPE  &kp N1   &kp N2       &kp N3     &kp N4   &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&trans      &alfred  &snippits    &raycast   &kp F2   &kp F4    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans      &none    &screenshot  &shortcat  &kp F12  &tmux     &trans    &trans    &trans  &trans     &trans  &trans
+                                  &trans     &trans   &trans    &trans    &trans    &trans
             >;
         };
 
