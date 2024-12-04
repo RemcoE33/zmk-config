@@ -58,31 +58,16 @@
             bindings = <&kp LC(B)>;
             label = "TMUX";
         };
-    };
 
-    combos {
-        compatible = "zmk,combos";
-
-        row_to_left {
-            bindings = <&mt RG(LEFT_SHIFT) LEFT_ARROW>;
-            key-positions = <38 18>;
-        };
-
-        row_to_down {
-            bindings = <&mt RG(LEFT_SHIFT) DOWN_ARROW>;
-            key-positions = <38 19>;
-        };
-
-        row_to_up {
-            bindings = <&mt RG(LEFT_SHIFT) RIGHT_ARROW>;
-            key-positions = <38 20>;
-        };
-
-        row_to_right {
-            bindings = <&mt RG(LEFT_SHIFT) RIGHT_ARROW>;
-            key-positions = <38 21>;
+        hyper: hyper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(LA(RIGHT_GUI)))>;
+            label = "HYPER";
         };
     };
+
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -96,9 +81,24 @@
 
             bindings = <
 &kp LCTRL       &kp Q  &kp W  &kp E  &kp R        &kp T               &kp Y         &kp U      &kp I      &kp O    &kp P     &kp BSPC
-&kp TAB         &kp A  &kp S  &kp D  &kp F        &kp G               &kp H         &kp J      &kp K      &kp L    &kp SEMI  &kp SQT
+&kp TAB         &kp A  &kp S  &kp D  &kp F        &kp G               &kp H         &kp J      &kp K      &kp L    &kp SEMI  &mt LS(LA(LC(LEFT_GUI))) SQT
 &sk LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B               &kp N         &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp LEFT_SHIFT
-                              &mo 2  &lt 3 SPACE  &kp LEFT_COMMAND    &kp LEFT_ALT  &kp ENTER  &mo 1
+                              &mo 1  &lt 3 SPACE  &kp LEFT_COMMAND    &kp LEFT_ALT  &kp ENTER  &mo 2
+            >;
+        };
+
+        symbols {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
+            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
+            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&kp ESCAPE  &kp EXCL      &kp AT        &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS          &kp KP_MULTIPLY  &kp LPAR           &kp RPAR       &kp PIPE
+&trans      &trans        &trans        &kp EQUAL  &kp PLUS  &trans       &kp MINUS  &kp LESS_THAN     &kp LEFT_BRACE   &kp LEFT_BRACKET   &GoVariable    &kp GRAVE
+&trans      &bt BT_SEL 1  &bt BT_SEL 0  &trans     &trans    &trans       &kp UNDER  &kp GREATER_THAN  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp TILDE
+                                        &trans     &trans    &trans       &trans     &trans            &trans
             >;
         };
 
@@ -117,25 +117,10 @@
             >;
         };
 
-        symbols {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            bindings = <
-&kp ESCAPE  &kp EXCL      &kp AT        &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS          &kp KP_MULTIPLY   &kp LPAR  &kp RPAR       &kp PIPE
-&trans      &trans        &trans        &kp EQUAL  &kp PLUS  &trans       &kp MINUS  &kp LESS_THAN     &kp LEFT_BRACKET  &kp RBKT  &GoVariable    &kp GRAVE
-&trans      &bt BT_SEL 1  &bt BT_SEL 0  &trans     &trans    &trans       &kp UNDER  &kp GREATER_THAN  &kp LBRC          &kp RBRC  &kp BACKSLASH  &kp TILDE
-                                        &trans     &trans    &trans       &trans     &trans            &trans
-            >;
-        };
-
         excel_window {
             bindings = <
 &trans  &trans  &trans  &trans            &trans            &trans    &trans          &trans          &trans        &trans           &trans  &trans
-&trans  &trans  &trans  &kp LEFT_SHIFT    &kp LEFT_COMMAND  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
+&trans  &none   &none   &kp LEFT_SHIFT    &kp LEFT_COMMAND  &none     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
 &trans  &trans  &trans  &kp LC(LEFT_ALT)  &trans            &trans    &trans          &trans          &trans        &trans           &trans  &trans
                         &trans            &trans            &trans    &trans          &trans          &trans
             >;
