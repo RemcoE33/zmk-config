@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
     macros {
@@ -95,10 +96,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp EXCL      &kp AT        &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS          &kp KP_MULTIPLY  &kp LPAR           &kp RPAR       &kp PIPE
-&trans      &trans        &trans        &kp EQUAL  &kp PLUS  &trans       &kp MINUS  &kp LESS_THAN     &kp LEFT_BRACE   &kp LEFT_BRACKET   &GoVariable    &kp GRAVE
-&trans      &bt BT_SEL 1  &bt BT_SEL 0  &trans     &trans    &trans       &kp UNDER  &kp GREATER_THAN  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp TILDE
-                                        &trans     &trans    &trans       &trans     &trans            &trans
+&kp ESCAPE    &kp EXCL      &kp AT        &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS          &kp KP_MULTIPLY  &kp LPAR           &kp RPAR       &kp PIPE
+&trans        &trans        &trans        &kp EQUAL  &kp PLUS  &trans       &kp MINUS  &kp LESS_THAN     &kp LEFT_BRACE   &kp LEFT_BRACKET   &GoVariable    &kp GRAVE
+&out OUT_TOG  &bt BT_SEL 1  &bt BT_SEL 0  &trans     &trans    &trans       &kp UNDER  &kp GREATER_THAN  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp TILDE
+                                          &trans     &trans    &trans       &trans     &trans            &trans
             >;
         };
 
