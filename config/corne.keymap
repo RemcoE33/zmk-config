@@ -105,7 +105,7 @@
             bindings = <
 &kp ESCAPE  &kp N1   &kp N2       &kp N3    &kp N4   &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
 &trans      &alfred  &snippits    &raycast  &kp F2   &kp F4    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans      &none    &screenshot  &warp     &kp F12  &none     &trans    &trans    &trans  &trans     &trans  &trans
+&trans      &none    &screenshot  &warp     &kp F12  &kp F5    &trans    &trans    &trans  &trans     &trans  &trans
                                   &trans    &trans   &trans    &trans    &trans    &trans
             >;
         };
@@ -120,7 +120,7 @@
             bindings = <
 &kp ESCAPE  &kp EXCL      &kp AT        &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS          &kp KP_MULTIPLY   &kp LPAR  &kp RPAR       &kp PIPE
 &trans      &trans        &trans        &kp EQUAL  &kp PLUS  &trans       &kp MINUS  &kp LESS_THAN     &kp LEFT_BRACKET  &kp RBKT  &GoVariable    &kp GRAVE
-&trans      &bt BT_SEL 1  &bt BT_SEL 0  &trans     &trans    &trans       &kp UNDER  &kp GREATER_THAN  &kp LBRC          &kp RBRC  &kp BACKSLASH  &kp TILDE
+&bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 0  &trans     &trans    &trans       &kp UNDER  &kp GREATER_THAN  &kp LBRC          &kp RBRC  &kp BACKSLASH  &kp TILDE
                                         &trans     &trans    &trans       &trans     &trans            &trans
             >;
         };
