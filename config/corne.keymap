@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 / {
     macros {
@@ -27,7 +28,7 @@
         screenshot: screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LA(LS(X))>;
+            bindings = <&kp LA(LS(Z))>;
             display-name = "SCREENSHOT";
         };
 
@@ -38,10 +39,10 @@
             display-name = "RAYCAST";
         };
 
-        warp: warp {
+        shortcat: warp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LC(GRAVE)>;
+            bindings = <&kp LC(LA(SPACE))>;
             display-name = "WARP";
         };
 
@@ -51,31 +52,30 @@
             bindings = <&kp COLON &kp EQUAL>;
             display-name = "GOVARIABLE";
         };
-    };
 
-    combos {
-        compatible = "zmk,combos";
-
-        row_to_left {
-            bindings = <&mt RG(LEFT_SHIFT) LEFT_ARROW>;
-            key-positions = <38 18>;
+        tmux: tmux {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(B)>;
+            display-name = "TMUX";
         };
 
-        row_to_down {
-            bindings = <&mt RG(LEFT_SHIFT) DOWN_ARROW>;
-            key-positions = <38 19>;
+        hyper: hyper {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LC(LA(RIGHT_GUI)))>;
+            display-name = "HYPER";
         };
 
-        row_to_up {
-            bindings = <&mt RG(LEFT_SHIFT) RIGHT_ARROW>;
-            key-positions = <38 20>;
-        };
-
-        row_to_right {
-            bindings = <&mt RG(LEFT_SHIFT) RIGHT_ARROW>;
-            key-positions = <38 21>;
+        quickterm: quickterm {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LC(GRAVE)>;
+            display-name = "QUICKTERM";
         };
     };
+
+    combos { compatible = "zmk,combos"; };
 
     keymap {
         compatible = "zmk,keymap";
@@ -89,24 +89,9 @@
 
             bindings = <
 &kp LCTRL       &kp Q  &kp W  &kp E  &kp R        &kp T               &kp Y         &kp U      &kp I      &kp O    &kp P     &kp BSPC
-&kp TAB         &kp A  &kp S  &kp D  &kp F        &kp G               &kp H         &kp J      &kp K      &kp L    &kp SEMI  &mt LEFT_GUI SQT
+&kp TAB         &kp A  &kp S  &kp D  &kp F        &kp G               &kp H         &kp J      &kp K      &kp L    &kp SEMI  &mt LS(LA(LC(LEFT_GUI))) SQT
 &sk LEFT_SHIFT  &kp Z  &kp X  &kp C  &kp V        &kp B               &kp N         &kp M      &kp COMMA  &kp DOT  &kp FSLH  &kp LEFT_SHIFT
-                              &mo 2  &lt 3 SPACE  &kp LEFT_COMMAND    &kp LEFT_ALT  &kp ENTER  &mo 1
-            >;
-        };
-
-        num_macro {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
-            bindings = <
-&kp ESCAPE  &kp N1   &kp N2       &kp N3    &kp N4   &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
-&trans      &alfred  &snippits    &raycast  &kp F2   &kp F4    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
-&trans      &none    &screenshot  &warp     &kp F12  &kp F5    &trans    &trans    &trans  &trans     &trans  &trans
-                                  &trans    &trans   &trans    &trans    &trans    &trans
+                              &mo 1  &lt 3 SPACE  &kp LEFT_COMMAND    &kp LEFT_ALT  &kp ENTER  &mo 2
             >;
         };
 
@@ -118,17 +103,32 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&kp ESCAPE  &kp EXCL      &kp AT        &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS          &kp KP_MULTIPLY   &kp LPAR  &kp RPAR       &kp PIPE
-&trans      &trans        &trans        &kp EQUAL  &kp PLUS  &trans       &kp MINUS  &kp LESS_THAN     &kp LEFT_BRACKET  &kp RBKT  &GoVariable    &kp GRAVE
-&bt BT_CLR  &bt BT_SEL 1  &bt BT_SEL 0  &trans     &trans    &trans       &kp UNDER  &kp GREATER_THAN  &kp LBRC          &kp RBRC  &kp BACKSLASH  &kp TILDE
-                                        &trans     &trans    &trans       &trans     &trans            &trans
+&kp ESCAPE    &kp EXCL      &kp AT        &kp HASH   &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS          &kp KP_MULTIPLY  &kp LPAR           &kp RPAR       &kp PIPE
+&trans        &trans        &trans        &kp EQUAL  &kp PLUS  &trans       &kp MINUS  &kp LESS_THAN     &kp LEFT_BRACE   &kp LEFT_BRACKET   &GoVariable    &kp GRAVE
+&out OUT_TOG  &bt BT_SEL 1  &bt BT_SEL 0  &trans     &trans    &trans       &kp UNDER  &kp GREATER_THAN  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp BACKSLASH  &kp TILDE
+                                          &trans     &trans    &trans       &trans     &trans            &trans
+            >;
+        };
+
+        num_macro {
+            // -----------------------------------------------------------------------------------------
+            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
+            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
+            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
+            //                    | GUI |     | SPC |   | ENT |     | ALT |
+
+            bindings = <
+&kp ESCAPE  &kp N1   &kp N2       &kp N3     &kp N4   &kp N5    &kp N6    &kp N7    &kp N8  &kp N9     &kp N0  &trans
+&quickterm  &alfred  &snippits    &raycast   &kp F2   &kp F4    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &trans
+&trans      &none    &screenshot  &shortcat  &kp F12  &tmux     &trans    &trans    &trans  &trans     &trans  &trans
+                                  &trans     &trans   &trans    &trans    &trans    &trans
             >;
         };
 
         excel_window {
             bindings = <
 &trans  &trans  &trans  &trans            &trans            &trans    &trans          &trans          &trans        &trans           &trans  &trans
-&trans  &trans  &trans  &kp LEFT_SHIFT    &kp LEFT_COMMAND  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
+&trans  &none   &none   &kp LEFT_SHIFT    &kp LEFT_COMMAND  &none     &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
 &trans  &trans  &trans  &kp LC(LEFT_ALT)  &trans            &trans    &trans          &trans          &trans        &trans           &trans  &trans
                         &trans            &trans            &trans    &trans          &trans          &trans
             >;
