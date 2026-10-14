@@ -14,42 +14,42 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(SPACE)>;
-            label = "ALFRED";
+            display-name = "ALFRED";
         };
 
         snippits: snippits {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LG(LA(SPACE))>;
-            label = "SNIPPITS";
+            display-name = "SNIPPITS";
         };
 
         screenshot: screenshot {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(LS(X))>;
-            label = "SCREENSHOT";
+            display-name = "SCREENSHOT";
         };
 
         raycast: raycast {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(SPACE)>;
-            label = "RAYCAST";
+            display-name = "RAYCAST";
         };
 
         warp: warp {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LC(GRAVE)>;
-            label = "WARP";
+            display-name = "WARP";
         };
 
         GoVariable: GoVariable {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp COLON &kp EQUAL>;
-            label = "GOVARIABLE";
+            display-name = "GOVARIABLE";
         };
     };
 
