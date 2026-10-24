@@ -16,5 +16,6 @@ Derived from [GPeye/hammerbeam-slideshow](https://github.com/GPeye/hammerbeam-sl
 
 ## Artwork preview
 
-`artwork_previews.png` shows all 30 artworks with their numbers. The
-original artwork is by Hammerbeam (@hammerbeam on the ZMK Discord).
+[`artwork_previews_numbered.png`](artwork_previews_numbered.png) shows all 30
+artworks with their number labels (left-to-right, top-to-bottom). The original
+artwork is by Hammerbeam (@hammerbeam on the ZMK Discord).
