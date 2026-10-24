@@ -10,7 +10,7 @@ config CUSTOM_ANIMATION_SPEED
     default 300000
 
 config HAMMERBEAM_SLIDESHOW_MASK
-    int "Bitmask of which artworks (1-30) are included; bit N-1 selects artwork N"
+    hex "Bitmask of which artworks (1-30) are included; bit N-1 selects artwork N"
     default 0x3FFFFFFF
 
 config LV_Z_VDB_SIZE
