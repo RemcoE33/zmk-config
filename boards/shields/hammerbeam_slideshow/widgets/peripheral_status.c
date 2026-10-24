@@ -34,6 +34,9 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
     XX(19) XX(20) XX(21) XX(22) XX(23) XX(24)                                                      \
     XX(25) XX(26) XX(27) XX(28) XX(29) XX(30)
 
+#define HAMMERBEAM_DECLARE(n) extern const lv_img_dsc_t hammerbeam##n;
+HAMMERBEAM_IMGS(HAMMERBEAM_DECLARE)
+
 #define HAMMERBEAM_ENTRY(n)                                                                       \
     (CONFIG_HAMMERBEAM_SLIDESHOW_MASK & (1U << ((n) -1))) ? &hammerbeam##n : NULL,
 
