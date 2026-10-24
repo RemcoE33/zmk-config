@@ -1,0 +1,8 @@
+file_format: "1"
+id: hammerbeam-slideshow
+name: hammerbeam_slideshow
+type: shield
+url: https://github.com/GPeye/hammerbeam-slideshow
+requires: [nice_view_header]
+features:
+  - display
